@@ -28,14 +28,16 @@ body{
     padding: 60px;
 }
 .loginInputContainer input{
-    
+    margin: auto;
     margin-bottom: 30px;
-    margin-right: 20px;
+
     background-color: #40546D;
     width: 100%;
-    padding: 20px;
+    padding: 20px 10px;
+    padding-right: 0;
     border-radius: 30px;
     border: none;
+    text-indent: 1rem;
     color: white; /* Text color */
     font-family: Arial, sans-serif; /* Font family */
     font-size: 20px; /* Font size */
@@ -44,6 +46,7 @@ body{
     color: grey; /* Change placeholder color here */
     font-family: Arial, sans-serif; /* Placeholder font family */
     font-size: 20px; /* Placeholder font size */
+    text-indent: 1rem;
 }
 .loginBody button {
     text-align: center;
