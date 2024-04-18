@@ -1,4 +1,11 @@
-body{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Libre Franklin;
+}
+/*log in css*/
+body.index{
     background-image: url(../Images/InventoryManagement.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -48,7 +55,8 @@ body{
     font-size: 20px; /* Placeholder font size */
     text-indent: 1rem;
 }
-.loginBody button {
+.loginBody .button {
+    text-decoration: none;
     text-align: center;
     background-color: #3F91FF; /* Green background color */
     color: white; /* Text color */
@@ -57,12 +65,40 @@ body{
     border-radius: 20px; /* Rounded corners */
     cursor: pointer; /* Cursor style */
     font-size: 16px; /* Font size */
+    font-family: Libre Franklin;
 }
 
-.loginBody button:hover {
+.loginBody .button:hover {
     background-color: #19375e; /* Darker green color on hover */
 }
 .loginBody form div {
     text-align: center;
+}
+
+/* Home page css */
+body.homePage{
+    background-color: #223242;
+}
+#menuTab{
+    text-align: center;
+    font-size: 2em;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px;
+    border-color: white;
+    color: white;
+}
+.menuBox{
+    
+    width: 220px;
+    height: 100vh;
+    background-color: #345577;
+}
+.listDown{
+    margin-left: 2rem;
+    margin-bottom: 10px;
+}
+.listDown ul{
+    list-style: none;
 }
 
