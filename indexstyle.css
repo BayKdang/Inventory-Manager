@@ -1,0 +1,65 @@
+body{
+    background-image: url(../Images/InventoryManagement.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.loginHeader{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: Libre Franklin;
+}
+.loginBody h3{
+    font-family: Libre Franklin;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+.loginBody{
+    color: white;
+    margin: auto;
+    margin-top: 10%;
+    width: 600px;
+    background: #081624;
+    border-radius: 35px;
+    padding: 60px;
+}
+.loginInputContainer input{
+    
+    margin-bottom: 30px;
+    margin-right: 20px;
+    background-color: #40546D;
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px;
+    border: none;
+    color: white; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 20px; /* Font size */
+}
+.loginInputContainer input::placeholder {
+    color: grey; /* Change placeholder color here */
+    font-family: Arial, sans-serif; /* Placeholder font family */
+    font-size: 20px; /* Placeholder font size */
+}
+.loginBody button {
+    text-align: center;
+    background-color: #3F91FF; /* Green background color */
+    color: white; /* Text color */
+    padding: 20px 25px; /* Padding */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.loginBody button:hover {
+    background-color: #19375e; /* Darker green color on hover */
+}
+.loginBody form div {
+    text-align: center;
+}
+
