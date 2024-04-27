@@ -9,58 +9,34 @@
             }
         }, 1);
     };
-    spinner();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
+    spinner(0);
 
 
-    // Sticky Navbar
+    // Fixed Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
-        }
-    });
-    
-    
-    // Dropdown on mouse hover
-    const $dropdown = $(".dropdown");
-    const $dropdownToggle = $(".dropdown-toggle");
-    const $dropdownMenu = $(".dropdown-menu");
-    const showClass = "show";
-    
-    $(window).on("load resize", function() {
-        if (this.matchMedia("(min-width: 992px)").matches) {
-            $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
+        if ($(window).width() < 992) {
+            if ($(this).scrollTop() > 55) {
+                $('.fixed-top').addClass('shadow');
+            } else {
+                $('.fixed-top').removeClass('shadow');
             }
-            );
         } else {
-            $dropdown.off("mouseenter mouseleave");
-        }
+            if ($(this).scrollTop() > 55) {
+                $('.fixed-top').addClass('shadow').css('top', -55);
+            } else {
+                $('.fixed-top').removeClass('shadow').css('top', 0);
+            }
+        } 
     });
     
     
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
+   // Back to top button
+   $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
+    }
     });
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
@@ -68,10 +44,71 @@
     });
 
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
+    // Testimonial carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 2000,
+        center: false,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:1
+            },
+            992:{
+                items:2
+            },
+            1200:{
+                items:2
+            }
+        }
+    });
+
+
+    // vegetable carousel
+    $(".vegetable-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1500,
+        center: false,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            },
+            1200:{
+                items:4
+            }
+        }
     });
 
 
@@ -93,27 +130,22 @@
     });
 
 
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        center: true,
-        margin: 24,
-        dots: true,
-        loop: true,
-        nav : false,
-        responsive: {
-            0:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
+
+    // Product Quantity
+    $('.quantity button').on('click', function () {
+        var button = $(this);
+        var oldValue = button.parent().parent().find('input').val();
+        if (button.hasClass('btn-plus')) {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
             }
         }
+        button.parent().parent().find('input').val(newVal);
     });
-    
+
 })(jQuery);
 
